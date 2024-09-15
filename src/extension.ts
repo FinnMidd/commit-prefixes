@@ -27,7 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
         const repository: Repository = git.repositories[0];
 
         // Set the commit message
-        repository.inputBox.value = 'Your commit message here';
+        repository.inputBox.value = 'Update: ' + repository.inputBox.value;
     });
 
     context.subscriptions.push(disposable);
