@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "commit-prefixes.helloWorld",
-        "title": "Hello World"
+        "command": "extension.fillCommitMessage",
+        "title": "Fill Commit Message"
       }
     ]
   },
