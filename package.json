@@ -17,7 +17,96 @@
         "command": "extension.fillCommitMessage",
         "title": "Fill Commit Message"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Commit Message Prefixes Configuration",
+      "properties": {
+          "myExtension.commitMessagePrefixes": {
+              "type": "array",
+              "description": "List of commit message prefixes.",
+              "items": {
+                  "type": "object",
+                  "properties": {
+                      "label": {
+                          "type": "string",
+                          "description": "Label for the prefix option."
+                      },
+                      "prefix": {
+                          "type": "string",
+                          "description": "The prefix string to add to commit messages."
+                      },
+                      "emoji": {
+                          "type": "string",
+                          "description": "Emoji representing the type of commit."
+                      },
+                      "active": {
+                          "type": "boolean",
+                          "description": "Whether the prefix is active.",
+                          "default": true
+                      }
+                  },
+                  "required": ["label", "prefix", "emoji", "active"]
+              },
+              "default": [
+                  {
+                      "label": "Feature",
+                      "prefix": "Feature: ",
+                      "emoji": "✨",
+                      "active": true
+                  },
+                  {
+                      "label": "Bugfix",
+                      "prefix": "Bugfix: ",
+                      "emoji": "🐛",
+                      "active": true
+                  },
+                  {
+                      "label": "Documentation",
+                      "prefix": "Docs: ",
+                      "emoji": "📝",
+                      "active": true
+                  },
+                  {
+                      "label": "Refactor",
+                      "prefix": "Refactor: ",
+                      "emoji": "♻️",
+                      "active": true
+                  },
+                  {
+                      "label": "Performance",
+                      "prefix": "Performance: ",
+                      "emoji": "⚡️",
+                      "active": true
+                  },
+                  {
+                      "label": "Test",
+                      "prefix": "Test: ",
+                      "emoji": "✅",
+                      "active": true
+                  },
+                  {
+                      "label": "Chore",
+                      "prefix": "Chore: ",
+                      "emoji": "🔧",
+                      "active": true
+                  },
+                  {
+                      "label": "Revert",
+                      "prefix": "Revert: ",
+                      "emoji": "⏪",
+                      "active": true
+                  }
+              ]
+          },
+          "myExtension.labelStyle": {
+              "type": "string",
+              "enum": ["fancy", "plain"],
+              "default": "fancy",
+              "description": "Label style for commit message prefixes."
+          }
+      }
+  }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
