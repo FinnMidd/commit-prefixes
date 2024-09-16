@@ -53,7 +53,7 @@ export function activate(context: vscode.ExtensionContext) {
             };
         });
 
-        const selectedItem = await vscode.window.showQuickPick(items, { placeHolder: 'Select a commit message prefix' });
+        const selectedItem = await vscode.window.showQuickPick(items, { title: 'Select your prefix below!', placeHolder: 'Select a commit message prefix' });
 
         if (!selectedItem) {
             // User cancelled the quick pick
