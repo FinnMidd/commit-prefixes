@@ -68,7 +68,7 @@
                   },
                   {
                       "label": "Bugfix",
-                      "prefix": "Bugfix:",
+                      "prefix": "Bug:",
                       "emoji": "🐛",
                       "active": true
                   },
@@ -103,10 +103,40 @@
                       "active": true
                   },
                   {
+                    "label": "Debug",
+                    "prefix": "Debug:",
+                    "emoji": "🔍",
+                    "active": true
+                  },
+                  {
+                    "label": "Update",
+                    "prefix": "Update:",
+                    "emoji": "⬆️",
+                    "active": false
+                  },
+                  {
                       "label": "Revert",
                       "prefix": "Revert:",
                       "emoji": "⏪",
-                      "active": true
+                      "active": false
+                  },
+                  {
+                    "label": "Sync",
+                    "prefix": "Sync:",
+                    "emoji": "🔄",
+                    "active": false
+                  },
+                  {
+                    "label": "Hotfix",
+                    "prefix": "Hotfix:",
+                    "emoji": "🔥",
+                    "active": false
+                  },
+                  {
+                    "label": "Security",
+                    "prefix": "Security:",
+                    "emoji": "🔒",
+                    "active": false
                   }
               ]
           },
