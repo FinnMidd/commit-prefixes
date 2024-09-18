@@ -33,126 +33,134 @@
       "type": "object",
       "title": "Commit Message Prefixes Configuration",
       "properties": {
-          "myExtension.commitMessagePrefixes": {
-              "type": "array",
-              "description": "List of commit message prefixes.",
-              "items": {
-                  "type": "object",
-                  "properties": {
-                      "label": {
-                          "type": "string",
-                          "description": "Label for the prefix option."
-                      },
-                      "prefix": {
-                          "type": "string",
-                          "description": "The prefix string to add to commit messages."
-                      },
-                      "emoji": {
-                          "type": "string",
-                          "description": "Emoji representing the type of commit."
-                      },
-                      "active": {
-                          "type": "boolean",
-                          "description": "Whether the prefix is active.",
-                          "default": true
-                      }
-                  },
-                  "required": ["label", "prefix", "emoji", "active"]
+        "myExtension.commitMessagePrefixes": {
+          "type": "array",
+          "description": "List of commit message prefixes.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "description": "Label for the prefix option."
               },
-              "default": [
-                  {
-                      "label": "Feature",
-                      "prefix": "Feature:",
-                      "emoji": "✨",
-                      "active": true
-                  },
-                  {
-                      "label": "Bugfix",
-                      "prefix": "Bug:",
-                      "emoji": "🐛",
-                      "active": true
-                  },
-                  {
-                      "label": "Documentation",
-                      "prefix": "Docs:",
-                      "emoji": "📝",
-                      "active": true
-                  },
-                  {
-                      "label": "Refactor",
-                      "prefix": "Refactor:",
-                      "emoji": "♻️",
-                      "active": true
-                  },
-                  {
-                      "label": "Performance",
-                      "prefix": "Performance:",
-                      "emoji": "⚡",
-                      "active": true
-                  },
-                  {
-                      "label": "Test",
-                      "prefix": "Test:",
-                      "emoji": "✅",
-                      "active": true
-                  },
-                  {
-                      "label": "Chore",
-                      "prefix": "Chore:",
-                      "emoji": "🔧",
-                      "active": true
-                  },
-                  {
-                    "label": "Debug",
-                    "prefix": "Debug:",
-                    "emoji": "🔍",
-                    "active": true
-                  },
-                  {
-                    "label": "Update",
-                    "prefix": "Update:",
-                    "emoji": "⬆️",
-                    "active": false
-                  },
-                  {
-                      "label": "Revert",
-                      "prefix": "Revert:",
-                      "emoji": "⏪",
-                      "active": false
-                  },
-                  {
-                    "label": "Sync",
-                    "prefix": "Sync:",
-                    "emoji": "🔄",
-                    "active": false
-                  },
-                  {
-                    "label": "Hotfix",
-                    "prefix": "Hotfix:",
-                    "emoji": "🔥",
-                    "active": false
-                  },
-                  {
-                    "label": "Security",
-                    "prefix": "Security:",
-                    "emoji": "🔒",
-                    "active": false
-                  }
-              ]
-          },
-          "myExtension.labelStyle": {
-              "type": "string",
-              "enum": ["fancy", "plain"],
-              "default": "fancy",
-              "description": "Label style for commit message prefixes."
-          },
-          "myExtension.appendEmojiToEnd": {
+              "prefix": {
+                "type": "string",
+                "description": "The prefix string to add to commit messages."
+              },
+              "emoji": {
+                "type": "string",
+                "description": "Emoji representing the type of commit."
+              },
+              "active": {
                 "type": "boolean",
-                "default": false,
-                "description": "When enabled, appends the selected emoji to the end of the commit message."
+                "description": "Whether the prefix is active.",
+                "default": true
+              }
+            },
+            "required": [
+              "label",
+              "prefix",
+              "emoji",
+              "active"
+            ]
+          },
+          "default": [
+            {
+              "label": "Feature",
+              "prefix": "Feature:",
+              "emoji": "✨",
+              "active": true
+            },
+            {
+              "label": "Bugfix",
+              "prefix": "Bugfix:",
+              "emoji": "🐛",
+              "active": true
+            },
+            {
+              "label": "Documentation",
+              "prefix": "Docs:",
+              "emoji": "📝",
+              "active": true
+            },
+            {
+              "label": "Refactor",
+              "prefix": "Refactor:",
+              "emoji": "♻️",
+              "active": true
+            },
+            {
+              "label": "Performance",
+              "prefix": "Performance:",
+              "emoji": "⚡",
+              "active": true
+            },
+            {
+              "label": "Test",
+              "prefix": "Test:",
+              "emoji": "✅",
+              "active": true
+            },
+            {
+              "label": "Chore",
+              "prefix": "Chore:",
+              "emoji": "🔧",
+              "active": true
+            },
+            {
+              "label": "Debug",
+              "prefix": "Debug:",
+              "emoji": "🔍",
+              "active": false
+            },
+            {
+              "label": "Update",
+              "prefix": "Update:",
+              "emoji": "⬆️",
+              "active": true
+            },
+            {
+              "label": "Revert",
+              "prefix": "Revert:",
+              "emoji": "⏪",
+              "active": true
+            },
+            {
+              "label": "Sync",
+              "prefix": "Sync:",
+              "emoji": "🔄",
+              "active": true
+            },
+            {
+              "label": "Hotfix",
+              "prefix": "Hotfix:",
+              "emoji": "🔥",
+              "active": false
+            },
+            {
+              "label": "Security",
+              "prefix": "Security:",
+              "emoji": "🔒",
+              "active": false
             }
+          ]
+        },
+        "myExtension.labelStyle": {
+          "type": "string",
+          "enum": [
+            "fancy",
+            "plain"
+          ],
+          "default": "fancy",
+          "description": "Label style for commit message prefixes."
+        },
+        "myExtension.appendEmojiToEnd": {
+          "type": "boolean",
+          "default": false,
+          "description": "When enabled, appends the selected emoji to the end of the commit message."
+        }
       }
-  }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -163,14 +171,14 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.93.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
+    "@types/vscode": "^1.93.0",
     "@typescript-eslint/eslint-plugin": "^8.3.0",
     "@typescript-eslint/parser": "^8.3.0",
-    "eslint": "^9.9.1",
-    "typescript": "^5.5.4",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4"
   }
 }
