@@ -15,9 +15,19 @@
     "commands": [
       {
         "command": "extension.fillCommitMessage",
-        "title": "Fill Commit Message"
+        "title": "Fill Commit Message",
+        "icon": "$(heart)"
       }
     ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "extension.fillCommitMessage",
+          "group": "navigation",
+          "when": "scmProvider == git"
+        }
+      ]
+    },
     "configuration": {
       "type": "object",
       "title": "Commit Message Prefixes Configuration",
