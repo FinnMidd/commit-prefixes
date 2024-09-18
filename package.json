@@ -3,6 +3,7 @@
   "displayName": "commit-prefixes",
   "description": "An extension that adds customizable buttons to the source control tab, allowing you to quickly apply commit message prefixes like 'Update:', 'Feature:', and 'Fix:' to streamline your version control process.",
   "version": "0.0.1",
+  "publisher": "FinnMiddleton",
   "engines": {
     "vscode": "^1.93.0"
   },

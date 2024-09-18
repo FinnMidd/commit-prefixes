@@ -50,8 +50,17 @@ export function activate(context: vscode.ExtensionContext) {
             }
             return {
                 label: label,
-                description: p.prefix
+                description: p.prefix,
             };
+        });
+
+        // Add a separator before the settings item
+        items.push({ kind: vscode.QuickPickItemKind.Separator });
+
+        // Add the "Open prefix settings" item
+        items.push({
+            label: 'Open prefix settings',
+            description: '$(gear)'
         });
 
         // Add a title to the Quick Pick dialog
@@ -64,6 +73,13 @@ export function activate(context: vscode.ExtensionContext) {
 
         if (!selectedItem) {
             // User cancelled the quick pick
+            return;
+        }
+
+        // Check if the user selected the "Open prefix settings" option
+        if (selectedItem.label === 'Open prefix settings') {
+            // Open the settings editor to this extension's configuration
+            await vscode.commands.executeCommand('workbench.action.openSettings', '@ext:FinnMiddleton.commit-prefixes');
             return;
         }
 
