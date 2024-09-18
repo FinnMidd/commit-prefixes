@@ -10,6 +10,10 @@
   "categories": [
     "Other"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FinnMidd/commit-prefixes"
+  },
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
