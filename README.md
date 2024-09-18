@@ -114,7 +114,3 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 
 For questions or support, please contact [Finn Middleton](mailto:finnpmiddleton@gmail.com).
-
----
-
-*Note: Replace placeholders like `#`, `Your Name`, and `your.email@example.com` with actual links and information relevant to your project.*
