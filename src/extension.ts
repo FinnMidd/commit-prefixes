@@ -32,6 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
         const prefixes = config.get<Array<{ label: string; prefix: string; emoji: string; active: boolean }>>('commitMessagePrefixes', []);
         const labelStyle = config.get<string>('labelStyle', 'default');
         const includeEmojiInCommitMessage = config.get<boolean>('includeEmojiInCommitMessage', false);
+        const appendEmojiToEnd = config.get<boolean>('appendEmojiToEnd', false);
 
         // Filter active prefixes
         const activePrefixes = prefixes.filter(p => p.active);
@@ -53,7 +54,13 @@ export function activate(context: vscode.ExtensionContext) {
             };
         });
 
-        const selectedItem = await vscode.window.showQuickPick(items, { title: 'Select your prefix below!', placeHolder: 'Select a commit message prefix' });
+        // Add a title to the Quick Pick dialog
+        const quickPickTitle = 'Select Commit Prefix';
+
+        const selectedItem = await vscode.window.showQuickPick(items, {
+            title: quickPickTitle,
+            placeHolder: 'Select a commit message prefix'
+        });
 
         if (!selectedItem) {
             // User cancelled the quick pick
@@ -77,35 +84,65 @@ export function activate(context: vscode.ExtensionContext) {
             return;
         }
 
-        // Build regex to detect existing prefixes
+        // Get the current commit message
+        let currentMessage = repository.inputBox.value;
+
+        // Build the new prefix
+        let newPrefix = selectedPrefix.prefix;
+        if (includeEmojiInCommitMessage && !appendEmojiToEnd) {
+            newPrefix = `${selectedPrefix.emoji} ${newPrefix}`;
+        }
+
+        // Build regex to detect existing prefixes at the start
         function escapeRegExp(string: string): string {
             return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }
 
         const prefixPatterns = activePrefixes.map(p => {
             let prefix = p.prefix;
-            if (includeEmojiInCommitMessage) {
-                prefix = p.emoji + ' ' + prefix;
+            if (includeEmojiInCommitMessage && !appendEmojiToEnd) {
+                prefix = `${p.emoji} ${prefix}`;
             }
             return escapeRegExp(prefix);
         });
 
-        const regexPattern = `^(${prefixPatterns.join('|')})\\s*`;
-        const prefixRegex = new RegExp(regexPattern);
+        const prefixRegex = new RegExp(`^(${prefixPatterns.join('|')})\\s*`);
 
-        // Get the current commit message and remove existing prefix if present
-        let currentMessage = repository.inputBox.value;
-
+        // Remove existing prefix at the start if present
         currentMessage = currentMessage.replace(prefixRegex, '').trimStart();
 
-        // Build the new prefix
-        let newPrefix = selectedPrefix.prefix;
-        if (includeEmojiInCommitMessage) {
-            newPrefix = `${selectedPrefix.emoji} ${newPrefix}`;
+        // Trim leading spaces from currentMessage
+        currentMessage = currentMessage.trimStart();
+
+        // Determine if a space is needed between newPrefix and currentMessage
+        let separator = '';
+
+        if (!/\s$/.test(newPrefix) && currentMessage.length > 0) {
+            separator = ' ';
         }
 
-        // Update the commit message
-        repository.inputBox.value = `${newPrefix}${currentMessage ? ' ' + currentMessage : ''}`;
+        // Build regex to detect existing emoji at the end
+        const emojiAtEndRegex = new RegExp(`(\\s*)(${emojiRegexPattern.source})$`);
+
+        // Remove existing emoji at the end if present
+        if (appendEmojiToEnd) {
+            currentMessage = currentMessage.replace(emojiAtEndRegex, '').trimEnd();
+        }
+
+        // Append emoji at the end if setting is enabled
+        if (appendEmojiToEnd) {
+            // Remove any trailing spaces from currentMessage
+            currentMessage = currentMessage.trimEnd();
+
+            // Ensure there is a space between the message and the emoji
+            const space = currentMessage.length > 0 ? ' ' : '';
+            const emoji = selectedPrefix.emoji;
+
+            repository.inputBox.value = `${newPrefix}${separator}${currentMessage}${space}${emoji}`;
+        } else {
+            // Update the commit message with prefix at the start
+            repository.inputBox.value = `${newPrefix}${separator}${currentMessage}`;
+        }
     });
 
     context.subscriptions.push(disposable);

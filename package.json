@@ -51,49 +51,49 @@
               "default": [
                   {
                       "label": "Feature",
-                      "prefix": "Feature: ",
+                      "prefix": "Feature:",
                       "emoji": "✨",
                       "active": true
                   },
                   {
                       "label": "Bugfix",
-                      "prefix": "Bugfix: ",
+                      "prefix": "Bugfix:",
                       "emoji": "🐛",
                       "active": true
                   },
                   {
                       "label": "Documentation",
-                      "prefix": "Docs: ",
+                      "prefix": "Docs:",
                       "emoji": "📝",
                       "active": true
                   },
                   {
                       "label": "Refactor",
-                      "prefix": "Refactor: ",
+                      "prefix": "Refactor:",
                       "emoji": "♻️",
                       "active": true
                   },
                   {
                       "label": "Performance",
-                      "prefix": "Performance: ",
+                      "prefix": "Performance:",
                       "emoji": "⚡",
                       "active": true
                   },
                   {
                       "label": "Test",
-                      "prefix": "Test: ",
+                      "prefix": "Test:",
                       "emoji": "✅",
                       "active": true
                   },
                   {
                       "label": "Chore",
-                      "prefix": "Chore: ",
+                      "prefix": "Chore:",
                       "emoji": "🔧",
                       "active": true
                   },
                   {
                       "label": "Revert",
-                      "prefix": "Revert: ",
+                      "prefix": "Revert:",
                       "emoji": "⏪",
                       "active": true
                   }
@@ -104,7 +104,12 @@
               "enum": ["fancy", "plain"],
               "default": "fancy",
               "description": "Label style for commit message prefixes."
-          }
+          },
+          "myExtension.appendEmojiToEnd": {
+                "type": "boolean",
+                "default": false,
+                "description": "When enabled, appends the selected emoji to the end of the commit message."
+            }
       }
   }
   },
