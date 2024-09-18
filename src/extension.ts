@@ -55,7 +55,7 @@ export function activate(context: vscode.ExtensionContext) {
         });
 
         // Add a separator before the settings item
-        // items.push({ kind: vscode.QuickPickItemKind.Separator });
+        items.push({ kind: vscode.QuickPickItemKind.Separator } as any);
 
         // Add the "Open prefix settings" item
         items.push({
