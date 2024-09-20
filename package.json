@@ -24,6 +24,12 @@
         "icon": "$(heart)"
       }
     ],
+    "keybindings": [
+      {
+        "command": "extension.fillCommitMessage",
+        "key": "ctrl+shift+="
+      }
+    ],
     "menus": {
       "scm/title": [
         {
