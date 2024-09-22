@@ -21,7 +21,7 @@
       {
         "command": "extension.fillCommitMessage",
         "title": "Fill Commit Message",
-        "icon": "$(heart)"
+        "icon": "$(edit)"
       }
     ],
     "keybindings": [
