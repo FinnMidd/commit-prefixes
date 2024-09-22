@@ -1,116 +1,74 @@
-# Commit Prefixes VSCode Extension
+# Automate Commit Prefixes
 
-Enhance your Git commit workflow in Visual Studio Code by effortlessly adding prefixes and emojis to your commit messages. Customize your prefixes, include emojis, and streamline your commit process with ease.
+This extension allows you to improve your Git commit workflow by effortlessly adding customizable prefixes & optional emojis to your commit messages, with the press of a button. It's all about making your Git workflow faster, easier, and a whole lot more fun.
 
 ## Features
 
-- **Quickly Insert Commit Prefixes**: Use the `Fill Commit Message` command to select from a list of predefined prefixes and automatically insert them into your commit message.
-- **Emoji Support**: Optionally include emojis with your prefixes, either at the beginning or end of your commit messages.
-- **Customizable Prefixes**: Define your own set of prefixes, labels, and associated emojis through the extension settings.
-- **Source Control Integration**: Access the `Fill Commit Message` command directly from the Source Control view with a convenient action button.
-- **Settings Access**: Easily modify your prefix settings directly from the Quick Pick menu.
+-  **Quickly Pick Your Prefix**: Use the `edit` icon in the Source Control View or the  `Ctrl + Shift + =` shortcut, to quickly select from your list of predefined prefixes and automatically insert them into your commit message.
 
-## Installation
+-  **Automatic Emoji Support**: An optional feature to automatically add the associated emoji into your commit message, appending it at end of your commit messages. ✨
 
-1. Install the extension from the [VSCode Marketplace](#) or download it directly from the [GitHub repository](#).
-2. Reload or restart Visual Studio Code to activate the extension.
+-  **Personal Customization**: Easily edit & add your own set of prefixes, labels, and associated emojis, to cater to your workplace & preferred standardization.
 
-## Usage
+## Settings
 
-### 1. Configuring Prefixes
+-  **Label Style**: Select whether you want to your emojis to appear alongside your prefix labels, so that you can easily tell which is which *(on by default).*
 
-- Go to **File** > **Preferences** > **Settings** (or press `Ctrl+,`).
-- Search for `Commit Message Prefixes` or navigate to **Extensions** > **Commit Prefixes**.
-- Configure the `Commit Message Prefixes` setting with your desired prefixes, labels, emojis, and activation status.
+-  **Append Emojis**: When turned on, this feature will automatically add the prefix's associated emoji to the end of your commit message *(off by default).*
 
-  **Example Configuration:**
+-  **Hotkey**: By default, the key binding for this extension is set to `Ctrl + Shift + =` however, this can be altered in VSCode's Keyboard Shortcuts page, by searching for the `Fill Commit Message` command *(on by default).*
 
-  ```json
-  [
-    {
-      "label": "Feature",
-      "prefix": "feat: ",
-      "emoji": "✨",
-      "active": true
-    },
-    {
-      "label": "Bug Fix",
-      "prefix": "fix: ",
-      "emoji": "🐛",
-      "active": true
-    },
-    {
-      "label": "Documentation",
-      "prefix": "docs: ",
-      "emoji": "📝",
-      "active": true
-    }
-  ]
-  ```
+## Customization
 
-### 2. Using the `Fill Commit Message` Command
+This extension can easily fit your own workflow! You can fully customize the list of commit prefixes to match your team's style or your own personal preferences. Here's how:
 
-#### Via Command Palette:
+1.  **Open Your User Settings**: Open the `settings.json` file in your editor. This is where you can add or modify your own commit prefixes.
 
-- Open the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on macOS).
-- Type `Fill Commit Message` and select the command.
+2.  **Locate Prefix Structure**: Once inside the file, look for the `myExtension.commitMessagePrefixes` array. This is the array that stores all of the existing commit prefixes.
 
-#### Via Source Control View:
+3.  **Edit Your Prefix Array**: Each item in the array represents one of your prefix options. Edit or add items to customize these prefixes to your own liking. Each item uses the following structure:
 
-- Navigate to the **Source Control** view.
-- Click on the action icon (📝) in the title bar.
+```json
+{
+	"label": "Feature",
+	"prefix": "Feature:",
+	"emoji": "✨",
+	"primary": true,
+	"active": true
+},
+// Add additional prefixes here...
+```
 
-### 3. Selecting a Prefix
+	   "label": The display name of the prefix.
+	   "prefix": The text that will appear at the start of your commit message.
+	   "emoji": The emoji that represents the prefix.
+	   "primary": `true` shows the item immediately, `false` means it has to be searched for.
+	   "active": `true` makes the prefix available, `false` turns it off.
 
-- Upon running the command, a Quick Pick menu will appear.
-- Choose a prefix from the list. The commit message input box will be updated with the selected prefix.
-- If you wish to modify your prefixes, select the **Open prefix settings** option at the bottom of the menu.
+4.  **Save Your File**: Once all your changes are complete, save the `settings.json` file, and all the updated prefixes will automatically flow through into the extension's command.
 
-### 4. Emoji Settings
-
-- **Include Emojis in Commit Messages**:
-  - Enable or disable including emojis in your commit messages via the `Include Emoji In Commit Message` setting.
-- **Append Emoji To End**:
-  - Control whether the emoji is placed at the beginning or end of your commit message with the `Append Emoji To End` setting.
-
-## Extension Settings
-
-The extension contributes the following settings:
-
-- **Commit Message Prefixes** (`myExtension.commitMessagePrefixes`):
-  - An array of prefix configurations, each containing:
-    - `label`: A friendly name for the prefix.
-    - `prefix`: The text to insert into the commit message.
-    - `emoji`: An optional emoji associated with the prefix.
-    - `active`: A boolean indicating if the prefix is active.
-- **Include Emoji In Commit Message** (`myExtension.includeEmojiInCommitMessage`):
-  - When enabled, emojis will be included in the commit messages.
-- **Append Emoji To End** (`myExtension.appendEmojiToEnd`):
-  - When enabled, emojis will be appended to the end of the commit messages.
-- **Label Style** (`myExtension.labelStyle`):
-  - Determines how labels are displayed in the Quick Pick menu (`default` or `fancy`).
-
-## Known Limitations
-
-- **Cannot Intercept Commit Button Click**:
-  - Due to VSCode API limitations, the extension cannot intercept the commit action initiated by the commit button in the Source Control view to enforce prefix usage.
-- **Alternative Solutions**:
-  - The extension provides input validation to warn when commit messages lack prefixes.
-  - A custom command `Commit with Prefix` is available to streamline the commit process with prefixes.
+That's it! Now you’re all ready to commit with your own custom prefixes and emojis! 🎉
 
 ## Contribution
 
-Contributions are welcome! If you have suggestions for new features or improvements, feel free to open an issue or submit a pull request on the [GitHub repository](#).
+Want to play a part in making this extension even better? All contributions are encouraged! Whether you have suggestions for improvements, new features, or bug reports, all sorts are welcome!
 
-## License
+Feel free to submit a pull request or open an issue via the [GitHub repository](https://github.com/FinnMidd/commit-prefixes).
 
-This project is licensed under the [MIT License](LICENSE).
+Let's make something great together! 🚀
 
 ## Acknowledgements
 
-- Thanks to the VSCode community for the excellent documentation and resources.
+- Thanks to VSCode & it's community for the excellent [documentation](https://code.visualstudio.com/api/references/vscode-api) and resources.
+
+- Thanks to [Mathias Bynens](https://mathiasbynens.be/), who's [emoji-regex](https://www.npmjs.com/package/emoji-regex) package made the emoji handling a breeze.
+
 - Emoji icons provided by [Emoji Cheat Sheet](https://www.webfx.com/tools/emoji-cheat-sheet/).
 
 ## Contact
 
-For questions or support, please contact [Finn Middleton](mailto:finnpmiddleton@gmail.com).
+For questions or support, please open an issue on the [GitHub repository](https://github.com/FinnMidd/commit-prefixes) to get in touch. 📨
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
