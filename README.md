@@ -1,4 +1,4 @@
-# Automate Commit Prefixes
+# Speed up Your Commit Prefixes! 🔥
 
 This extension allows you to improve your Git commit workflow by effortlessly adding customizable prefixes & optional emojis to your commit messages, with the press of a button. It's all about making your Git workflow faster, easier, and a whole lot more fun.
 
@@ -9,6 +9,8 @@ This extension allows you to improve your Git commit workflow by effortlessly ad
 -  **Automatic Emoji Support**: An optional feature to automatically add the associated emoji into your commit message, appending it at end of your commit messages. ✨
 
 -  **Personal Customization**: Easily edit & add your own set of prefixes, labels, and associated emojis, to cater to your workplace & preferred standardization.
+
+-  **Automatic Prefix Replacement**: Accidentally selected the wrong prefix? Quickly replace it by running the command again & selecting your preferred prefix.
 
 ## Settings
 
@@ -33,7 +35,7 @@ This extension can easily fit your own workflow! You can fully customize the lis
 	"label": "Feature",
 	"prefix": "Feature:",
 	"emoji": "✨",
-	"primary": true,
+	"main": true,
 	"active": true
 },
 // Add additional prefixes here...
@@ -42,8 +44,8 @@ This extension can easily fit your own workflow! You can fully customize the lis
 	   "label": The display name of the prefix.
 	   "prefix": The text that will appear at the start of your commit message.
 	   "emoji": The emoji that represents the prefix.
-	   "primary": `true` shows the item immediately, `false` means it has to be searched for.
-	   "active": `true` makes the prefix available, `false` turns it off.
+	   "main": Determines whether the item appears in the initial quick pick, or requires a search.
+	   "active": Determines the prefix availability (`false` turns it off).
 
 4.  **Save Your File**: Once all your changes are complete, save the `settings.json` file, and all the updated prefixes will automatically flow through into the extension's command.
 
