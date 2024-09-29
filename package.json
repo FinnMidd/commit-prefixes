@@ -78,19 +78,25 @@
             {
               "label": "Feature",
               "prefix": "Feature:",
-              "emoji": "✨",
+              "emoji": "🎉",
               "active": true
             },
             {
               "label": "Bugfix",
-              "prefix": "Bugfix:",
+              "prefix": "Fix:",
               "emoji": "🐛",
               "active": true
             },
             {
               "label": "Documentation",
               "prefix": "Docs:",
-              "emoji": "📝",
+              "emoji": "📚",
+              "active": true
+            },
+            {
+              "label": "Style",
+              "prefix": "Style:",
+              "emoji": "🖌️",
               "active": true
             },
             {
@@ -108,13 +114,13 @@
             {
               "label": "Test",
               "prefix": "Test:",
-              "emoji": "✅",
-              "active": true
+              "emoji": "🧪",
+              "active": false
             },
             {
               "label": "Chore",
               "prefix": "Chore:",
-              "emoji": "🔧",
+              "emoji": "🛠️",
               "active": true
             },
             {
@@ -136,6 +142,12 @@
               "active": true
             },
             {
+              "label": "Accessibility",
+              "prefix": "A11y:",
+              "emoji": "♿",
+              "active": false
+            },
+            {
               "label": "Sync",
               "prefix": "Sync:",
               "emoji": "🔄",
@@ -151,6 +163,18 @@
               "label": "Security",
               "prefix": "Security:",
               "emoji": "🔒",
+              "active": false
+            },
+            {
+              "label": "Build",
+              "prefix": "Build:",
+              "emoji": "🏗️",
+              "active": false
+            },
+            {
+              "label": "CI",
+              "prefix": "CI:",
+              "emoji": "👷‍♂️",
               "active": false
             }
           ]
