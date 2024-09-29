@@ -71,6 +71,7 @@
               "label",
               "prefix",
               "emoji",
+              "main",
               "active"
             ]
           },
@@ -79,102 +80,119 @@
               "label": "Feature",
               "prefix": "Feature:",
               "emoji": "🎉",
+              "main": true,
               "active": true
             },
             {
               "label": "Bugfix",
               "prefix": "Fix:",
               "emoji": "🐛",
+              "main": true,
               "active": true
             },
             {
               "label": "Documentation",
               "prefix": "Docs:",
               "emoji": "📚",
+              "main": true,
               "active": true
             },
             {
               "label": "Style",
               "prefix": "Style:",
               "emoji": "🖌️",
+              "main": true,
               "active": true
             },
             {
               "label": "Refactor",
               "prefix": "Refactor:",
               "emoji": "♻️",
+              "main": true,
               "active": true
             },
             {
               "label": "Performance",
               "prefix": "Performance:",
               "emoji": "⚡",
+              "main": true,
               "active": true
             },
             {
               "label": "Test",
               "prefix": "Test:",
               "emoji": "🧪",
+              "main": false,
               "active": false
             },
             {
               "label": "Chore",
               "prefix": "Chore:",
               "emoji": "🛠️",
+              "main": true,
               "active": true
             },
             {
               "label": "Debug",
               "prefix": "Debug:",
               "emoji": "🔍",
+              "main": false,
               "active": false
             },
             {
               "label": "Update",
               "prefix": "Update:",
               "emoji": "⬆️",
+              "main": true,
               "active": true
             },
             {
               "label": "Revert",
               "prefix": "Revert:",
               "emoji": "⏪",
+              "main": true,
               "active": true
             },
             {
               "label": "Accessibility",
               "prefix": "A11y:",
               "emoji": "♿",
-              "active": false
+              "main": false,
+              "active": true
             },
             {
               "label": "Sync",
               "prefix": "Sync:",
               "emoji": "🔄",
+              "main": true,
               "active": true
             },
             {
               "label": "Hotfix",
               "prefix": "Hotfix:",
               "emoji": "🔥",
-              "active": false
+              "main": false,
+              "active": true
             },
             {
               "label": "Security",
               "prefix": "Security:",
               "emoji": "🔒",
+              "main": true,
               "active": false
             },
             {
               "label": "Build",
               "prefix": "Build:",
               "emoji": "🏗️",
+              "main": true,
               "active": false
             },
             {
               "label": "CI",
               "prefix": "CI:",
               "emoji": "👷‍♂️",
+              "main": true,
               "active": false
             }
           ]
