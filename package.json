@@ -91,7 +91,7 @@
           "default": [
             {
               "label": "Feature",
-              "prefix": "Feature:",
+              "prefix": "Feat:",
               "emoji": "🎉",
               "main": true,
               "active": true
@@ -126,7 +126,7 @@
             },
             {
               "label": "Performance",
-              "prefix": "Performance:",
+              "prefix": "Perf:",
               "emoji": "⚡",
               "main": true,
               "active": true
@@ -191,8 +191,8 @@
               "label": "Security",
               "prefix": "Security:",
               "emoji": "🔒",
-              "main": true,
-              "active": false
+              "main": false,
+              "active": true
             },
             {
               "label": "Build",
