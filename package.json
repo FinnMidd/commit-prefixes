@@ -1,15 +1,28 @@
 {
   "name": "commit-prefixes",
-  "displayName": "commit-prefixes",
-  "description": "An extension that adds customizable buttons to the source control tab, allowing you to quickly apply commit message prefixes such as 'Update:', 'Feature:', and 'Fix:' to streamline your version control process.",
-  "version": "0.0.1",
+  "displayName": "Commit Prefixes",
+  "description": "Quickly add & customize prefixes to your Git commit messages from the press of a button, streamlining your version control process.",
+  "version": "1.0.0",
   "publisher": "FinnMiddleton",
   "engines": {
     "vscode": "^1.93.0"
   },
+  "license": "SEE LICENSE IN LICENSE",
   "categories": [
+    "SCM Providers",
     "Other"
   ],
+  "keywords": [
+    "git",
+    "commit",
+    "prefix",
+    "version control",
+    "conventional commits"
+  ],
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#d5fbfe"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/FinnMidd/commit-prefixes"
