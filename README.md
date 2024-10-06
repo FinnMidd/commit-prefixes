@@ -1,8 +1,8 @@
 # Speed up Your Commit Prefixes! 🔥
 
-This extension allows you to improve your Git commit workflow by effortlessly adding customizable prefixes & optional emojis to your commit messages, all with the press of a button. It's focus is making your Git workflow faster, easier, and a whole lot more fun.
+This extension allows you to improve your Git commit workflow by effortlessly adding customizable prefixes & optional emojis to your commit messages, all with the press of a button. It's focus is making your Git workflow faster, easier, and a whole lot more enjoyable.
 
----
+![Tutorial of Commit Prefixes](assets/tutorial.gif "Tutorial")
 
 ## Features 🎉
 
@@ -13,6 +13,8 @@ This extension allows you to improve your Git commit workflow by effortlessly ad
 -  **Personal Customization**: Easily edit & add your own set of prefixes, labels, and associated emojis, to cater to your workplace & preferred standardization.
 
 -  **Automatic Prefix Replacement**: Accidentally selected the wrong prefix? Quickly replace it by running the command again & selecting your preferred prefix.
+
+![Screenshot of Commit Prefixes' main functionality](assets/screenshot.png "Prefix Quick Picker")
 
 ## Settings ⚙️
 
@@ -35,26 +37,45 @@ This extension can easily fit your own workflow! You can fully customize the lis
 ```json
 {
 	"label": "Feature",
-	"prefix": "Feature:",
-	"emoji": "✨",
+	"prefix": "Feat:",
+	"emoji": "🎉",
 	"main": true,
 	"active": true
 },
-// Add additional prefixes here...
 ```
 
-```json
-- "label": The display name of the prefix.
-- "prefix": The text that will appear at the start of your commit message.
-- "emoji": The emoji that represents the prefix.
-- "main": Determines whether the item appears in the initial quick pick, or requires a search.
-- "active": Determines the prefix's availability.
-```
+- List of properties:
+	- "label": The display name of the prefix.
+	- "prefix": The text that will appear at the start of your commit message.
+	- "emoji": An emoji that represents the prefix.
+	- "main": Determines whether the item appears in the initial quick pick, or requires a search.
+	- "active": Determines the prefix's availability.
+
 
 
 4.  **Save Your File**: Once all your changes are complete, save the `settings.json` file, and all the updated prefixes will automatically flow through into the extension's command.
 
 That's it! Now you’re all ready to commit with your own custom prefixes and emojis! 🎉
+
+### List of Current Default Prefixes:
+
+- 🎉 Feature | Feat:
+- 🐛 Bugfix | Fix:
+- 📚 Documentation | Docs:
+- 🖌️ Style | Style:
+- ♻️ Refactor | Refactor:
+- ⚡ Performance | Perf:
+- 🧪 Test | Test:
+- 🛠️ Chore | Chore:
+- 🔍 Debug | Debug:
+- ⬆️ Update | Update:
+- ⏪ Revert | Revert:
+- ♿ Accessibility | A11y:
+- 🔄 Sync | Sync:
+- 🔥 Hotfix | Hotfix:
+- 🔒 Security | Security:
+- 🏗️ Build | Build:
+- 👷‍♂️ CI | CI:
 
 ## Contribution ✍️
 
@@ -64,7 +85,7 @@ Feel free to submit a pull request or open an issue via the [GitHub repository](
 
 Let's make something great together! 🚀
 
-## Acknowledgements 🙌
+## Acknowledgements 🙏
 
 - Thanks to VSCode & it's community for the excellent [documentation](https://code.visualstudio.com/api/references/vscode-api) and resources.
 
@@ -76,6 +97,6 @@ Let's make something great together! 🚀
 
 For questions or support, please open an issue on the [GitHub repository](https://github.com/FinnMidd/commit-prefixes) to get in touch. 📨
 
-## License 📜
+## License 📄
 
 This project is licensed under the [MIT License](LICENSE).
